@@ -1,56 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import { Container } from '@mui/material';
+import React, { useState } from 'react';
 import './App.css';
+import Day from './components/Day';
+import Slots from './components/Slots';
+
+const days = ["TUE 7", "WED 8", "THU 9", "FRI 10", "SAT 11", "SUN 12", "MON 13"]
+const timeSlots = ["9AM - 10AM", "10AM - 11AM", "11AM - 12PM","12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM"]
 
 function App() {
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  const changeSelectedIndex = (value) => {
+    setSelectedIndex(value)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <Container maxWidth='xl'>
+        <div className='container'>
+            {days.map((day, index) => (
+              <div className='days' key={day}>
+                <Day day = {day} selected = {selectedIndex === index} changeSelectedIndex = {changeSelectedIndex} />
+                  <div className='time-slots'>
+                    {timeSlots.map((time) => (
+                      <Slots key={time} day={day} timeSlot = {time} />
+                    ))}
+                  </div>
+              </div>
+            ))}
+        </div>
+      </Container>
     </div>
   );
 }
