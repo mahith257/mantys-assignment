@@ -16,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className='heading'>SCHEDULER</div>
       <Container maxWidth='xl'>
         <div className='container'>
             {days.map((day, index) => (
