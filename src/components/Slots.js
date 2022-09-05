@@ -63,7 +63,7 @@ export default function Slots({ day, timeSlot }) {
             aria-describedby="modal-modal-description"
             sx={style}
         >
-            <Box width={350} p={3} bgcolor={"background.default"} color={"text.primary"} borderRadius={5} className='modal-container'>
+            <Box width={350} p={2} bgcolor={"background.default"} color={"text.primary"} borderRadius={5} className='modal-container'>
                 {
                     days[day] && days[day][timeSlot] && days[day][timeSlot].name !== '' ? <Typography variant="h6" textAlign="center">Edit call details</Typography> : 
                     <Typography variant="h6" textAlign="center">Schedule a call</Typography>

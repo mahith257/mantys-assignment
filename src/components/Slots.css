@@ -110,7 +110,7 @@ input[type=number] {
 
 .modal-container {
     position: relative;
-    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.24);
 }
 
 .close-modal {
