@@ -37,6 +37,7 @@ export default function Slots({ day, timeSlot }) {
     const handleClose = () => {
         setName(days[day] && days[day][timeSlot] ? days[day][timeSlot].name : '')
         setPhoneNumber(days[day] && days[day][timeSlot] ? days[day][timeSlot].phoneNumber : '')
+        setError(null)
         setOpen(false)
     }
 
@@ -95,7 +96,7 @@ export default function Slots({ day, timeSlot }) {
                         </div>
                     </label>
                     {error && <p className='error'>{error}</p>}
-                    <button>Schedule</button>
+                    {days[day] && days[day][timeSlot] && days[day][timeSlot].name !== '' ? <button>Update call details</button> : <button>Schedule</button>}
                     <p className='close-modal' onClick={handleClose}><CloseIcon sx={{fontSize: 20}} /></p>
                 </form>
             </Box>

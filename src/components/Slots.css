@@ -54,6 +54,7 @@ label > span {
     display: block;
     margin-bottom: 5px;
     color: gray;
+    font-size: 13px;
 }
 
 button {
