@@ -4,7 +4,7 @@ import './App.css';
 import Day from './components/Day';
 import Slots from './components/Slots';
 
-const days = ["TUE 7", "WED 8", "THU 9", "FRI 10", "SAT 11", "SUN 12", "MON 13"]
+const days = ["MON 5", "TUE 6", "WED 7", "THU 8", "FRI 9", "SAT 10", "SUN 11"]
 const timeSlots = ["9AM - 10AM", "10AM - 11AM", "11AM - 12PM","12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM"]
 
 function App() {
